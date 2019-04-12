@@ -1,0 +1,53 @@
+# 123456.base_52
+
+This week I needed to encode a number in a minimum of URL safe characters.  
+I started with Ruby's built in `to_s(36)` which was pretty reasonable, 
+until you run into user accounts translating directly into bad words.  I'm looking at you 13996.
+
+I decided to write my own with numbers and both cases of letters but no vowels.  That leaves 52 characters.
+
+Monkey patching isn't in vogue anymore, but I like it for this kind of stuff.
+
+```ruby
+class Integer
+  # No vowels means no naughty words.  Radix: 52
+  # You can't do negative, that's not what this is for.
+  # See also String.base_52
+  def base_52
+    alphabet = %w(0 1 2 3 4 5 6 7 8 9 b c d f g h j k l m n p q r s t v w x y z B C D F G H J K L M N P Q R S T V W X Y Z)
+    integer = self.abs
+    string  = []
+    loop do
+      string << alphabet[integer % 52]
+      (integer/=52).nonzero? || break
+    end
+    string.reverse.join
+  end
+end
+```
+
+```ruby
+class String
+  # No vowels means no naughty words.  Radix: 52
+  # See also Integer.base_52
+  def base_52
+    alphabet = %w(0 1 2 3 4 5 6 7 8 9 b c d f g h j k l m n p q r s t v w x y z B C D F G H J K L M N P Q R S T V W X Y Z)
+    self.chars.reverse.each_with_index.map{ |char, index| alphabet.find_index(char) * 52 ** index }.sum
+  rescue
+    nil
+  end
+end
+```
+
+
+It works pretty well, although I'm not totally happy with the complexity of the Integer version. 
+If you try to use a String with an invalid character it just returns nil.
+
+```ruby
+123456.base_52
+ => "SF8" 
+"SF8".base_52
+ => 123456 
+ ```
+ 
+ 
