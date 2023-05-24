@@ -24,6 +24,8 @@ github_username:  duffyjp
 # Build settings
 markdown: kramdown
 theme: minima
+sass:
+  quiet_deps: true
 plugins:
   - jekyll-feed
 

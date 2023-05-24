@@ -5,7 +5,7 @@ title: "Sorting HTML Tables with Dentropize"
 
 
 <script type="module">
-  import dentropize from "https://cdn.rawgit.com/duffyjp/dentropize/main/dentropize.js";
+  import dentropize from "https://cdn.jsdelivr.net/gh/duffyjp/dentropize@main/dentropize.js";
 
   document.addEventListener("DOMContentLoaded", function() {
     dentropize();
@@ -68,5 +68,42 @@ title: "Sorting HTML Tables with Dentropize"
     <td>Big Hero 6</td>
     <td>2023-05-22</td>
     <td>27</td>
+  </tr>
+</table>
+
+
+* Dates, Currency, Numbers
+<table class="sortable">
+  <thead>
+    <tr>
+      <th>ISO 8601</th>
+      <th>Local Date</th>
+      <th>Currency</th>
+      <th>Number with delimiters</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>2020-05-04</td>
+    <td>1/5/22</td>
+    <td>$1203.04</td>
+    <td>1,234,000</td>
+  </tr>
+  <tr>
+    <td>2021-03-09</td>
+    <td>4/12/18</td>
+    <td>$12.04</td>
+    <td>234,000</td>
+  </tr>
+  <tr>
+    <td>1999-10-07</td>
+    <td>11/12/08</td>
+    <td>$8.00</td>
+    <td>4,000</td>
+  </tr>
+  <tr>
+    <td>2023-03-20</td>
+    <td>7/14/84</td>
+    <td>$3203.04</td>
+    <td>90</td>
   </tr>
 </table>
