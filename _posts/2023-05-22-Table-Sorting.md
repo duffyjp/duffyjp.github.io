@@ -12,17 +12,7 @@ title: "Sorting HTML Tables with Dentropize"
   });
 </script>
 
-<style>
-  table.sortable thead th {
-    padding-left: 20px;
-    background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
-    background-position: center left;
-    background-repeat: no-repeat;
-    cursor: pointer;
-  }
-  table.sortable thead th.dir-u { background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7); }
-  table.sortable thead th.dir-d { background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7); }
-</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/duffyjp/dentropize@main/dentropize.css">
 
 # [Dentropize](https://github.com/duffyjp/dentropize)
 
