@@ -1,3 +1,8 @@
+---
+layout: post
+title: "Log AT&T Router Status"
+---
+
 ![AT&T](/assets/img/att.png){:width="100%"}
 
 AT&T Fiber was recently made available in my area, but my experience has been quite poor. The broadband connection goes down at least twice a day. I wrote a couple scripts to help document the problem.
@@ -1241,5 +1246,6 @@ $ grep -C1 -v Up att.log
 </pre>
 </div>
 
+<br>
 
 # I do not recommend AT&T Fiber.
