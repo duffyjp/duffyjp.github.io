@@ -29,8 +29,7 @@ done
 * This will report `OFFLINE` if either the internet connection is down including two minute periods where connectivity is lost but the router does not yet report a problem (see next section).
 
 <div style="overflow-y: auto; max-height: 512px;">
-
-```
+<pre>
 grep -C1 OFFLINE internet.log
 2023-07-31 12:15:42 online
 2023-07-31 12:15:58 OFFLINE
@@ -923,8 +922,7 @@ grep -C1 OFFLINE internet.log
 2023-09-19 05:59:53 online
 2023-09-19 06:00:13 OFFLINE
 2023-09-19 06:00:23 online
-
-```
+</pre>
 </div>
 
 
@@ -948,8 +946,7 @@ done
 * This is reveal more significant events.  As of this update my AT&T gateway reports 20 days of uptime, but as seen above the actual internet connection is lost typically once or twice a day for usually two minutes at a time.
 
 <div style="overflow-y: auto; max-height: 512px;">
-
-```
+<pre>
 $ grep -C1 -v Up att.log 
 2023-08-02 10:07:33 Up
 2023-08-02 10:07:44  Down
@@ -1241,8 +1238,7 @@ $ grep -C1 -v Up att.log
 2023-08-07 03:03:22  No IP Address
 2023-08-07 03:03:33  No IP Address
 2023-08-07 03:03:43 Up
-```
-
+</pre>
 </div>
 
 
