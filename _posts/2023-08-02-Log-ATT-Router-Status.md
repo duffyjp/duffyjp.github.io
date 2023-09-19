@@ -31,7 +31,7 @@ done
 ```
 
 ### Check the results
-* This will report `OFFLINE` if either the internet connection is down including two minute periods where connectivity is lost but the router does not yet report a problem (see next section).
+* This will report `OFFLINE` if either the internet connection is down including two minute periods where connectivity is lost but the router does not yet report a problem (<a href="#att-logger">see next section</a>).
 
 <div style="overflow-y: auto; max-height: 512px;">
 <pre>
@@ -930,8 +930,13 @@ grep -C1 OFFLINE internet.log
 </pre>
 </div>
 
+<br>
+<hr>
+
+<a id="att-logger"></a>
 
 ### AT&T Specific Broadband Status Logger:
+
 
 ```shell
 #!/bin/sh
@@ -1249,3 +1254,4 @@ $ grep -C1 -v Up att.log
 <br>
 
 # I do not recommend AT&T Fiber.
+

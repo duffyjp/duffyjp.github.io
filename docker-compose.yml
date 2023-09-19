@@ -1,11 +1,19 @@
-version: '3'
+version: '3.8'
+
+
 services:
   jekyll:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      LD_LIBRARY_PATH: "/lib:/usr/lib"
     ports:
       - 4000:4000
     volumes:
-      - .:/app
+      - .:/jekyll
+      - gems:/usr/local/bundle/
+    command: bash -c "bundle install && bundle exec jekyll serve --host 0.0.0.0"
 
+volumes:
+  gems:
