@@ -953,7 +953,7 @@ done
 ```
 
 ### Check the results
-* This is reveal more significant events.  As of this update my AT&T gateway reports 20 days of uptime, but as seen above the actual internet connection is lost typically once or twice a day for usually two minutes at a time.
+* This will reveal more significant events.  As of this update my AT&T gateway reports 20 days of uptime, but as seen above the actual internet connection is lost typically once or twice a day for usually two minutes at a time.
 
 <div style="overflow-y: auto; max-height: 512px;">
 <pre>
