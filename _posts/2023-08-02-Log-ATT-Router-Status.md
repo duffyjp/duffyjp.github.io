@@ -953,16 +953,15 @@ done
 ```
 
 ### Check the results
-* This will reveal more significant events.  As of this update my AT&T gateway reports 20 days of uptime, but as seen above the actual internet connection is lost typically once or twice a day for usually two minutes at a time.
+* This will reveal more significant events.  Note that more uptime details were added to the script after the first week.
 
 <div style="overflow-y: auto; max-height: 512px;">
 <pre>
-$ grep -C1 -v Up att.log 
+egrep -B1 "Down|Address" att.log
 2023-08-02 10:07:33 Up
 2023-08-02 10:07:44  Down
 2023-08-02 10:07:55  Down
 2023-08-02 10:08:05  Down
-2023-08-02 10:08:18 Up
 --
 2023-08-02 14:43:30 Up
 2023-08-02 14:43:41  Down
@@ -1028,11 +1027,9 @@ $ grep -C1 -v Up att.log
 2023-08-02 14:54:30  Down
 2023-08-02 14:54:40  Down
 2023-08-02 14:54:51  No IP Address
-2023-08-02 14:55:02 Up
 --
 2023-08-02 16:18:12 Up
 2023-08-02 16:20:27 No Reply: Router Down!
-2023-08-02 16:20:38 Up
 --
 2023-08-03 18:04:04 Up
 2023-08-03 18:04:12 No Reply: Router Down!
@@ -1049,15 +1046,12 @@ $ grep -C1 -v Up att.log
 2023-08-03 18:05:47  No IP Address
 2023-08-03 18:05:59  No IP Address
 2023-08-03 18:06:09  No IP Address
-2023-08-03 18:06:23 Up
 --
 2023-08-04 00:43:42 Up
 2023-08-04 00:45:57 No Reply: Router Down!
-2023-08-04 00:46:07 Up
 --
 2023-08-04 09:51:21 Up
 2023-08-04 09:53:37 No Reply: Router Down!
-2023-08-04 09:53:48 Up
 --
 2023-08-04 11:31:14 Up
 2023-08-04 11:31:29  Down
@@ -1068,11 +1062,9 @@ $ grep -C1 -v Up att.log
 2023-08-04 11:32:23  Down
 2023-08-04 11:32:33  Down
 2023-08-04 11:32:44  Down
-2023-08-04 11:32:55 Up
 --
 2023-08-05 02:23:58 Up
 2023-08-05 02:26:13 No Reply: Router Down!
-2023-08-05 02:26:23 Up
 --
 2023-08-05 15:33:49 Up
 2023-08-05 15:34:02  Down
@@ -1131,7 +1123,6 @@ $ grep -C1 -v Up att.log
 2023-08-05 15:43:34  Down
 2023-08-05 15:43:45  No IP Address
 2023-08-05 15:43:55  No IP Address
-2023-08-05 15:44:06 Up
 --
 2023-08-05 15:46:09 Up
 2023-08-05 15:46:19  Down
@@ -1227,11 +1218,9 @@ $ grep -C1 -v Up att.log
 2023-08-05 16:02:27  No IP Address
 2023-08-05 16:02:37  No IP Address
 2023-08-05 16:02:48  No IP Address
-2023-08-05 16:02:59 Up
 --
 2023-08-06 20:38:53 Up
 2023-08-06 20:41:07 No Reply: Router Down!
-2023-08-06 20:41:18 Up
 --
 2023-08-07 03:01:32 Up
 2023-08-07 03:01:41 No Reply: Router Down!
@@ -1247,9 +1236,800 @@ $ grep -C1 -v Up att.log
 2023-08-07 03:03:07  Down
 2023-08-07 03:03:22  No IP Address
 2023-08-07 03:03:33  No IP Address
-2023-08-07 03:03:43 Up
+--
+2023-08-07 15:14:03 Up 	 Uptime: 00:12:12:15
+2023-08-07 15:16:18 No Reply: Router Down! 	 Uptime: 00:00:01:58
+--
+2023-08-08 08:37:09 Up 	 Uptime: 00:07:01:09
+2023-08-08 08:39:25 No Reply: Router Down! 	 Uptime: 00:00:01:58
+--
+2023-08-08 10:38:14 Up 	 Uptime: 00:02:00:44
+2023-08-08 10:38:25  Down 	 Uptime: 00:02:00:58
+2023-08-08 10:38:36  Down 	 Uptime: 00:02:01:09
+2023-08-08 10:38:47  Down 	 Uptime: 00:02:01:20
+2023-08-08 10:38:59  Down 	 Uptime: 00:02:01:31
+2023-08-08 10:39:09  Down 	 Uptime: 00:02:01:42
+2023-08-08 10:39:32 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:39:43 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:39:54 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:40:05 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:40:16 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:40:28 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:40:39 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:40:50 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:41:01 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:41:12 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:41:23 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:41:35 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:41:46 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:41:57 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:42:08 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:42:19 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:42:30 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:42:42 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:42:53 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:43:04 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:43:15 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:43:26 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:43:37 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:43:49 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:44:00 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:44:11 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:44:22 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:44:33 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:44:44 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:44:56 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:45:07 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:45:18 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:45:29 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:45:40 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:45:51 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:46:03 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:46:14 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:46:25 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:46:36 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:46:47 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:46:58 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:47:10 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:47:21 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:47:32 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:47:43 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:47:54 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:48:05 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:48:17 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:48:28 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:48:39 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:48:50 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:49:01 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:49:12 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:49:24 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:49:35 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:49:46 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:49:57 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:50:08 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:50:19 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:50:31 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:50:42 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:50:53 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:51:04 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:51:15 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:51:26 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:51:38 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:51:49 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:52:00 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:52:11 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:52:22 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:52:34 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:52:45 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:52:56 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:53:07 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:53:18 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:53:29 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:53:41 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:53:52 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:54:03 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:54:14 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:54:25 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:54:36 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:54:48 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:54:59 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:55:10 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:55:21 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:55:32 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:55:43 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:55:55 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:56:06 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:56:17 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:56:28 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:56:39 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:56:50 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:57:02 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:57:13 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:57:24 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:57:35 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:57:46 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:57:57 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:58:09 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:58:20 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:58:31 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:58:42 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:58:53 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:59:04 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:59:16 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:59:27 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:59:38 No Reply: Router Down! 	 Uptime: 
+2023-08-08 10:59:49 No Reply: Router Down! 	 Uptime: 
+2023-08-08 11:00:00 No Reply: Router Down! 	 Uptime: 
+2023-08-08 11:00:11 No Reply: Router Down! 	 Uptime: 
+--
+2023-08-08 18:29:06 Up 	 Uptime: 00:07:47:31
+2023-08-08 18:29:17 No Reply: Router Down! 	 Uptime: 
+2023-08-08 18:29:28 No Reply: Router Down! 	 Uptime: 
+--
+2023-08-09 02:51:48 Up 	 Uptime: 
+2023-08-09 02:52:00 No Reply: Router Down! 	 Uptime: 
+2023-08-09 02:52:11 No Reply: Router Down! 	 Uptime: 
+2023-08-09 02:52:22 No Reply: Router Down! 	 Uptime: 
+2023-08-09 02:52:33 No Reply: Router Down! 	 Uptime: 
+2023-08-09 02:52:44 No Reply: Router Down! 	 Uptime: 
+2023-08-09 02:52:55 No Reply: Router Down! 	 Uptime: 
+2023-08-09 02:53:07 No Reply: Router Down! 	 Uptime: 
+2023-08-09 02:53:18 No Reply: Router Down! 	 Uptime: 
+2023-08-09 02:53:29 No Reply: Router Down! 	 Uptime: 
+2023-08-09 02:53:40  Down 	 Uptime: 00:00:01:11
+2023-08-09 02:53:50  Down 	 Uptime: 00:00:01:22
+2023-08-09 02:54:03  No IP Address 	 Uptime: 00:00:01:34
+2023-08-09 02:54:14  No IP Address 	 Uptime: 00:00:01:45
+--
+2023-08-14 17:14:25 Up 	 Uptime: 05:14:21:55
+2023-08-14 17:14:37 No Reply: Router Down! 	 Uptime: 
+2023-08-14 17:14:48 No Reply: Router Down! 	 Uptime: 
+2023-08-14 17:14:59 No Reply: Router Down! 	 Uptime: 
+2023-08-14 17:15:10 No Reply: Router Down! 	 Uptime: 
+2023-08-14 17:15:21 No Reply: Router Down! 	 Uptime: 
+2023-08-14 17:15:32 No Reply: Router Down! 	 Uptime: 
+2023-08-14 17:15:44 No Reply: Router Down! 	 Uptime: 
+2023-08-14 17:15:52 No Reply: Router Down! 	 Uptime: 00:00:01:11
+2023-08-14 17:16:03  Down 	 Uptime: 00:00:01:22
+--
+2023-08-15 03:00:41 Up 	 Uptime: 00:09:46:00
+2023-08-15 03:01:01 No Reply: Router Down! 	 Uptime: 
+2023-08-15 03:01:12 No Reply: Router Down! 	 Uptime: 
+2023-08-15 03:01:23 No Reply: Router Down! 	 Uptime: 
+2023-08-15 03:01:35 No Reply: Router Down! 	 Uptime: 
+2023-08-15 03:01:46 No Reply: Router Down! 	 Uptime: 
+2023-08-15 03:01:57 No Reply: Router Down! 	 Uptime: 
+2023-08-15 03:02:08  Down 	 Uptime: 00:00:01:09
+2023-08-15 03:02:23  Down 	 Uptime: 00:00:01:23
+2023-08-15 03:02:33  No IP Address 	 Uptime: 00:00:01:34
+--
+2023-08-15 10:00:44 Up 	 Uptime: 00:06:59:44
+2023-08-15 10:00:55 No Reply: Router Down! 	 Uptime: 
+2023-08-15 10:01:06 No Reply: Router Down! 	 Uptime: 
+2023-08-15 10:01:17 No Reply: Router Down! 	 Uptime: 
+2023-08-15 10:01:28 No Reply: Router Down! 	 Uptime: 
+2023-08-15 10:01:40 No Reply: Router Down! 	 Uptime: 
+2023-08-15 10:01:51 No Reply: Router Down! 	 Uptime: 
+2023-08-15 10:02:02 No Reply: Router Down! 	 Uptime: 
+2023-08-15 10:02:13  Down 	 Uptime: 00:00:01:15
+2023-08-15 10:02:24  Down 	 Uptime: 00:00:01:25
+2023-08-15 10:02:47  No IP Address 	 Uptime: 00:00:01:49
+--
+2023-08-20 19:36:49 Up 	 Uptime: 05:09:35:49
+2023-08-20 19:37:11 No Reply: Router Down! 	 Uptime: 
+2023-08-20 19:37:23 No Reply: Router Down! 	 Uptime: 
+2023-08-20 19:37:34 No Reply: Router Down! 	 Uptime: 
+2023-08-20 19:37:45 No Reply: Router Down! 	 Uptime: 
+2023-08-20 19:37:56 No Reply: Router Down! 	 Uptime: 
+2023-08-20 19:38:07 No Reply: Router Down! 	 Uptime: 
+2023-08-20 19:38:16 No Reply: Router Down! 	 Uptime: 00:00:01:06
+2023-08-20 19:38:34  No IP Address 	 Uptime: 00:00:01:24
+--
+2023-08-21 17:38:46 Up 	 Uptime: 00:22:01:36
+2023-08-21 17:39:09 No Reply: Router Down! 	 Uptime: 
+2023-08-21 17:39:20 No Reply: Router Down! 	 Uptime: 
+2023-08-21 17:39:31 No Reply: Router Down! 	 Uptime: 
+2023-08-21 17:39:42 No Reply: Router Down! 	 Uptime: 
+2023-08-21 17:39:53 No Reply: Router Down! 	 Uptime: 
+2023-08-21 17:40:05 No Reply: Router Down! 	 Uptime: 
+2023-08-21 17:40:16 No Reply: Router Down! 	 Uptime: 
+2023-08-21 17:40:38  No IP Address 	 Uptime: 00:00:01:29
+2023-08-21 17:40:51  No IP Address 	 Uptime: 00:00:01:42
+--
+2023-08-22 10:36:36 Up 	 Uptime: 00:16:57:26
+2023-08-22 10:36:58 No Reply: Router Down! 	 Uptime: 
+2023-08-22 10:37:09 No Reply: Router Down! 	 Uptime: 
+2023-08-22 10:37:20 No Reply: Router Down! 	 Uptime: 
+2023-08-22 10:37:31 No Reply: Router Down! 	 Uptime: 
+2023-08-22 10:37:42 No Reply: Router Down! 	 Uptime: 
+2023-08-22 10:37:54 No Reply: Router Down! 	 Uptime: 
+2023-08-22 10:38:02 No Reply: Router Down! 	 Uptime: 00:00:01:09
+2023-08-22 10:38:18  Down 	 Uptime: 00:00:01:25
+2023-08-22 10:38:29  No IP Address 	 Uptime: 00:00:01:36
+--
+2023-08-23 06:46:06 Up 	 Uptime: 00:20:09:13
+2023-08-23 06:46:28 No Reply: Router Down! 	 Uptime: 
+2023-08-23 06:46:39 No Reply: Router Down! 	 Uptime: 
+2023-08-23 06:46:50 No Reply: Router Down! 	 Uptime: 
+2023-08-23 06:47:01 No Reply: Router Down! 	 Uptime: 
+2023-08-23 06:47:12 No Reply: Router Down! 	 Uptime: 
+2023-08-23 06:47:24 No Reply: Router Down! 	 Uptime: 
+2023-08-23 06:47:35  Down 	 Uptime: 00:00:01:07
+2023-08-23 06:47:46  Down 	 Uptime: 00:00:01:18
+--
+2023-08-23 23:29:44 Up 	 Uptime: 00:16:43:16
+2023-08-23 23:30:06 No Reply: Router Down! 	 Uptime: 
+2023-08-23 23:30:17 No Reply: Router Down! 	 Uptime: 
+2023-08-23 23:30:28 No Reply: Router Down! 	 Uptime: 
+2023-08-23 23:30:40 No Reply: Router Down! 	 Uptime: 
+2023-08-23 23:30:51 No Reply: Router Down! 	 Uptime: 
+2023-08-23 23:31:02 No Reply: Router Down! 	 Uptime: 
+2023-08-23 23:31:13  Down 	 Uptime: 00:00:01:12
+2023-08-23 23:31:29  Down 	 Uptime: 00:00:01:28
+2023-08-23 23:31:40  No IP Address 	 Uptime: 00:00:01:38
+--
+2023-08-24 09:53:14 Up 	 Uptime: 00:10:23:12
+2023-08-24 09:53:36 No Reply: Router Down! 	 Uptime: 
+2023-08-24 09:53:47 No Reply: Router Down! 	 Uptime: 
+2023-08-24 09:53:58 No Reply: Router Down! 	 Uptime: 
+2023-08-24 09:54:09 No Reply: Router Down! 	 Uptime: 
+2023-08-24 09:54:21 No Reply: Router Down! 	 Uptime: 
+2023-08-24 09:54:32 No Reply: Router Down! 	 Uptime: 
+2023-08-24 09:54:40 No Reply: Router Down! 	 Uptime: 00:00:01:04
+2023-08-24 09:54:51  Down 	 Uptime: 00:00:01:15
+2023-08-24 09:55:07  Down 	 Uptime: 00:00:01:30
+--
+2023-08-25 21:26:33 Up 	 Uptime: 01:11:32:56
+2023-08-25 21:26:54 No Reply: Router Down! 	 Uptime: 
+2023-08-25 21:27:05 No Reply: Router Down! 	 Uptime: 
+2023-08-25 21:27:16 No Reply: Router Down! 	 Uptime: 
+2023-08-25 21:27:27 No Reply: Router Down! 	 Uptime: 
+2023-08-25 21:27:38 No Reply: Router Down! 	 Uptime: 
+2023-08-25 21:27:50 No Reply: Router Down! 	 Uptime: 
+2023-08-25 21:28:01 No Reply: Router Down! 	 Uptime: 
+2023-08-25 21:28:16  Down 	 Uptime: 00:00:01:25
+2023-08-25 21:28:27  No IP Address 	 Uptime: 00:00:01:36
+2023-08-25 21:28:38  No IP Address 	 Uptime: 00:00:01:47
+--
+2023-08-26 18:14:25 Up 	 Uptime: 00:20:47:33
+2023-08-26 18:14:45 No Reply: Router Down! 	 Uptime: 
+2023-08-26 18:14:57 No Reply: Router Down! 	 Uptime: 
+2023-08-26 18:15:08 No Reply: Router Down! 	 Uptime: 
+2023-08-26 18:15:19 No Reply: Router Down! 	 Uptime: 
+2023-08-26 18:15:30 No Reply: Router Down! 	 Uptime: 
+2023-08-26 18:15:41 No Reply: Router Down! 	 Uptime: 
+2023-08-26 18:15:54  Down 	 Uptime: 00:00:01:11
+2023-08-26 18:16:10  Down 	 Uptime: 00:00:01:27
+2023-08-26 18:16:21  No IP Address 	 Uptime: 00:00:01:38
+2023-08-26 18:16:31  No IP Address 	 Uptime: 00:00:01:48
+2023-08-26 18:16:42  No IP Address 	 Uptime: 00:00:01:59
+--
+2023-08-27 12:37:22 Up 	 Uptime: 00:18:22:38
+2023-08-27 12:37:44 No Reply: Router Down! 	 Uptime: 
+2023-08-27 12:37:55 No Reply: Router Down! 	 Uptime: 
+2023-08-27 12:38:06 No Reply: Router Down! 	 Uptime: 
+2023-08-27 12:38:17 No Reply: Router Down! 	 Uptime: 
+2023-08-27 12:38:29 No Reply: Router Down! 	 Uptime: 
+2023-08-27 12:38:40 No Reply: Router Down! 	 Uptime: 
+2023-08-27 12:38:51 No Reply: Router Down! 	 Uptime: 
+--
+2023-08-28 15:18:46 Up 	 Uptime: 01:02:41:03
+2023-08-28 15:19:08 No Reply: Router Down! 	 Uptime: 
+2023-08-28 15:19:19 No Reply: Router Down! 	 Uptime: 
+2023-08-28 15:19:30 No Reply: Router Down! 	 Uptime: 
+2023-08-28 15:19:41 No Reply: Router Down! 	 Uptime: 
+2023-08-28 15:19:52 No Reply: Router Down! 	 Uptime: 
+2023-08-28 15:20:03 No Reply: Router Down! 	 Uptime: 
+2023-08-28 15:20:15 No Reply: Router Down! 	 Uptime: 
+--
+2023-08-29 00:08:09 Up 	 Uptime: 00:08:49:01
+2023-08-29 00:08:31 No Reply: Router Down! 	 Uptime: 
+2023-08-29 00:08:43 No Reply: Router Down! 	 Uptime: 
+2023-08-29 00:08:54 No Reply: Router Down! 	 Uptime: 
+2023-08-29 00:09:05 No Reply: Router Down! 	 Uptime: 
+2023-08-29 00:09:16 No Reply: Router Down! 	 Uptime: 
+2023-08-29 00:09:27 No Reply: Router Down! 	 Uptime: 
+2023-08-29 00:09:36 No Reply: Router Down! 	 Uptime: 00:00:01:03
+2023-08-29 00:09:47  Down 	 Uptime: 00:00:01:14
+2023-08-29 00:10:02  Down 	 Uptime: 00:00:01:29
+2023-08-29 00:10:13  No IP Address 	 Uptime: 00:00:01:40
+--
+2023-08-29 06:32:14 Up 	 Uptime: 00:06:23:41
+2023-08-29 06:32:36 No Reply: Router Down! 	 Uptime: 
+2023-08-29 06:32:48 No Reply: Router Down! 	 Uptime: 
+2023-08-29 06:32:59 No Reply: Router Down! 	 Uptime: 
+2023-08-29 06:33:10 No Reply: Router Down! 	 Uptime: 
+2023-08-29 06:33:21 No Reply: Router Down! 	 Uptime: 
+2023-08-29 06:33:32 No Reply: Router Down! 	 Uptime: 
+2023-08-29 06:33:41 No Reply: Router Down! 	 Uptime: 00:00:01:05
+2023-08-29 06:33:51  Down 	 Uptime: 00:00:01:16
+2023-08-29 06:34:13  No IP Address 	 Uptime: 00:00:01:38
+--
+2023-08-29 13:52:35 Up 	 Uptime: 00:07:19:59
+2023-08-29 13:52:57 No Reply: Router Down! 	 Uptime: 
+2023-08-29 13:53:08 No Reply: Router Down! 	 Uptime: 
+2023-08-29 13:53:19 No Reply: Router Down! 	 Uptime: 
+2023-08-29 13:53:30 No Reply: Router Down! 	 Uptime: 
+2023-08-29 13:53:42 No Reply: Router Down! 	 Uptime: 
+2023-08-29 13:53:53 No Reply: Router Down! 	 Uptime: 
+2023-08-29 13:54:02 No Reply: Router Down! 	 Uptime: 00:00:01:03
+2023-08-29 13:54:23  No IP Address 	 Uptime: 00:00:01:25
+--
+2023-08-30 03:37:46 Up 	 Uptime: 00:13:44:47
+2023-08-30 03:38:08 No Reply: Router Down! 	 Uptime: 
+2023-08-30 03:38:20 No Reply: Router Down! 	 Uptime: 
+2023-08-30 03:38:31 No Reply: Router Down! 	 Uptime: 
+2023-08-30 03:38:42 No Reply: Router Down! 	 Uptime: 
+2023-08-30 03:38:53 No Reply: Router Down! 	 Uptime: 
+2023-08-30 03:39:04 No Reply: Router Down! 	 Uptime: 
+2023-08-30 03:39:15 No Reply: Router Down! 	 Uptime: 
+2023-08-30 03:39:28  No IP Address 	 Uptime: 00:00:01:25
+2023-08-30 03:39:39  No IP Address 	 Uptime: 00:00:01:35
+--
+2023-08-30 22:36:39 Up 	 Uptime: 00:18:58:35
+2023-08-30 22:36:59 No Reply: Router Down! 	 Uptime: 
+2023-08-30 22:37:10 No Reply: Router Down! 	 Uptime: 
+2023-08-30 22:37:22 No Reply: Router Down! 	 Uptime: 
+2023-08-30 22:37:33 No Reply: Router Down! 	 Uptime: 
+2023-08-30 22:37:44 No Reply: Router Down! 	 Uptime: 
+2023-08-30 22:37:55 No Reply: Router Down! 	 Uptime: 
+2023-08-30 22:38:06 No Reply: Router Down! 	 Uptime: 
+2023-08-30 22:38:17  Down 	 Uptime: 00:00:01:17
+2023-08-30 22:38:39  No IP Address 	 Uptime: 00:00:01:39
+--
+2023-08-31 08:58:17 Up 	 Uptime: 00:10:21:17
+2023-08-31 08:58:39 No Reply: Router Down! 	 Uptime: 
+2023-08-31 08:58:50 No Reply: Router Down! 	 Uptime: 
+2023-08-31 08:59:01 No Reply: Router Down! 	 Uptime: 
+2023-08-31 08:59:12 No Reply: Router Down! 	 Uptime: 
+2023-08-31 08:59:24 No Reply: Router Down! 	 Uptime: 
+2023-08-31 08:59:35 No Reply: Router Down! 	 Uptime: 
+2023-08-31 08:59:51  No IP Address 	 Uptime: 00:00:01:17
+--
+2023-09-09 09:24:35 Up 	 Uptime: 09:00:25:58
+2023-09-09 09:24:57 No Reply: Router Down! 	 Uptime: 
+--
+2023-09-09 12:10:35 Up 	 Uptime: 09:03:11:58
+2023-09-09 12:10:57 No Reply: Router Down! 	 Uptime: 
+2023-09-09 12:11:08 No Reply: Router Down! 	 Uptime: 
+2023-09-09 12:11:19 No Reply: Router Down! 	 Uptime: 
+2023-09-09 12:11:30 No Reply: Router Down! 	 Uptime: 
+2023-09-09 12:11:41 No Reply: Router Down! 	 Uptime: 
+2023-09-09 12:11:53 No Reply: Router Down! 	 Uptime: 
+2023-09-09 12:12:04 No Reply: Router Down! 	 Uptime: 
+2023-09-09 12:12:26  No IP Address 	 Uptime: 00:00:01:33
+--
+2023-09-09 18:43:02 Up 	 Uptime: 00:06:32:09
+2023-09-09 18:43:24 No Reply: Router Down! 	 Uptime: 
+2023-09-09 18:43:35 No Reply: Router Down! 	 Uptime: 
+2023-09-09 18:43:46 No Reply: Router Down! 	 Uptime: 
+2023-09-09 18:43:58 No Reply: Router Down! 	 Uptime: 
+2023-09-09 18:44:09 No Reply: Router Down! 	 Uptime: 
+2023-09-09 18:44:20 No Reply: Router Down! 	 Uptime: 
+2023-09-09 18:44:31 No Reply: Router Down! 	 Uptime: 
+2023-09-09 18:44:42 No Reply: Router Down! 	 Uptime: 
+--
+2023-09-12 00:34:11 Up 	 Uptime: 02:05:50:52
+2023-09-12 00:34:31 No Reply: Router Down! 	 Uptime: 
+2023-09-12 00:34:42 No Reply: Router Down! 	 Uptime: 
+2023-09-12 00:34:54 No Reply: Router Down! 	 Uptime: 
+2023-09-12 00:35:05 No Reply: Router Down! 	 Uptime: 
+2023-09-12 00:35:16 No Reply: Router Down! 	 Uptime: 
+2023-09-12 00:35:27 No Reply: Router Down! 	 Uptime: 
+2023-09-12 00:35:46 No Reply: Router Down! 	 Uptime: 00:00:01:15
+--
+2023-09-12 10:57:56 Up 	 Uptime: 00:10:23:25
+2023-09-12 10:58:18 No Reply: Router Down! 	 Uptime: 
+2023-09-12 10:58:29 No Reply: Router Down! 	 Uptime: 
+2023-09-12 10:58:40 No Reply: Router Down! 	 Uptime: 
+2023-09-12 10:58:52 No Reply: Router Down! 	 Uptime: 
+2023-09-12 10:59:03 No Reply: Router Down! 	 Uptime: 
+2023-09-12 10:59:14 No Reply: Router Down! 	 Uptime: 
+2023-09-12 10:59:22 No Reply: Router Down! 	 Uptime: 00:00:01:04
+2023-09-12 10:59:34  Down 	 Uptime: 00:00:01:16
+2023-09-12 10:59:51  No IP Address 	 Uptime: 00:00:01:33
+2023-09-12 11:00:02  No IP Address 	 Uptime: 00:00:01:45
+2023-09-12 11:00:15  No IP Address 	 Uptime: 00:00:01:57
+--
+2023-09-12 17:38:32 Up 	 Uptime: 00:06:40:14
+2023-09-12 17:38:51 No Reply: Router Down! 	 Uptime: 
+2023-09-12 17:39:03 No Reply: Router Down! 	 Uptime: 
+2023-09-12 17:39:14 No Reply: Router Down! 	 Uptime: 
+2023-09-12 17:39:25 No Reply: Router Down! 	 Uptime: 
+2023-09-12 17:39:36 No Reply: Router Down! 	 Uptime: 
+2023-09-12 17:39:47 No Reply: Router Down! 	 Uptime: 
+2023-09-12 17:39:58 No Reply: Router Down! 	 Uptime: 
+2023-09-12 17:40:17  Down 	 Uptime: 00:00:01:28
+2023-09-12 17:40:29  No IP Address 	 Uptime: 00:00:01:40
+--
+2023-09-13 04:20:38 Up 	 Uptime: 00:10:41:48
+2023-09-13 04:20:59 No Reply: Router Down! 	 Uptime: 
+2023-09-13 04:21:10 No Reply: Router Down! 	 Uptime: 
+2023-09-13 04:21:21 No Reply: Router Down! 	 Uptime: 
+2023-09-13 04:21:32 No Reply: Router Down! 	 Uptime: 
+2023-09-13 04:21:43 No Reply: Router Down! 	 Uptime: 
+2023-09-13 04:21:55 No Reply: Router Down! 	 Uptime: 
+2023-09-13 04:22:06 No Reply: Router Down! 	 Uptime: 
+--
+2023-09-14 20:39:18 Up 	 Uptime: 01:16:18:18
+2023-09-14 20:39:40 No Reply: Router Down! 	 Uptime: 
+2023-09-14 20:39:52 No Reply: Router Down! 	 Uptime: 
+2023-09-14 20:40:03 No Reply: Router Down! 	 Uptime: 
+2023-09-14 20:40:14 No Reply: Router Down! 	 Uptime: 
+2023-09-14 20:40:25 No Reply: Router Down! 	 Uptime: 
+2023-09-14 20:40:36 No Reply: Router Down! 	 Uptime: 
+2023-09-14 20:40:47 No Reply: Router Down! 	 Uptime: 
+2023-09-14 20:41:00  Down 	 Uptime: 00:00:01:18
+2023-09-14 20:41:16  Down 	 Uptime: 00:00:01:34
+2023-09-14 20:41:28  No IP Address 	 Uptime: 00:00:01:47
+--
+2023-09-15 15:22:02 Up 	 Uptime: 00:18:42:20
+2023-09-15 15:22:25 No Reply: Router Down! 	 Uptime: 
+2023-09-15 15:22:36 No Reply: Router Down! 	 Uptime: 
+2023-09-15 15:22:47 No Reply: Router Down! 	 Uptime: 
+2023-09-15 15:22:58 No Reply: Router Down! 	 Uptime: 
+2023-09-15 15:23:09 No Reply: Router Down! 	 Uptime: 
+2023-09-15 15:23:20 No Reply: Router Down! 	 Uptime: 
+2023-09-15 15:23:32  Down 	 Uptime: 00:00:01:13
+2023-09-15 15:23:50  No IP Address 	 Uptime: 00:00:01:31
+--
+2023-09-16 13:09:39 Up 	 Uptime: 00:21:47:20
+2023-09-16 13:10:01 No Reply: Router Down! 	 Uptime: 
+2023-09-16 13:10:12 No Reply: Router Down! 	 Uptime: 
+2023-09-16 13:10:24 No Reply: Router Down! 	 Uptime: 
+2023-09-16 13:10:35 No Reply: Router Down! 	 Uptime: 
+2023-09-16 13:10:46 No Reply: Router Down! 	 Uptime: 
+2023-09-16 13:10:57 No Reply: Router Down! 	 Uptime: 
+2023-09-16 13:11:08 No Reply: Router Down! 	 Uptime: 
+--
+2023-09-16 19:50:37 Up 	 Uptime: 00:06:40:38
+2023-09-16 19:51:00 No Reply: Router Down! 	 Uptime: 
+2023-09-16 19:51:11 No Reply: Router Down! 	 Uptime: 
+2023-09-16 19:51:22 No Reply: Router Down! 	 Uptime: 
+2023-09-16 19:51:33 No Reply: Router Down! 	 Uptime: 
+2023-09-16 19:51:44 No Reply: Router Down! 	 Uptime: 
+2023-09-16 19:51:56 No Reply: Router Down! 	 Uptime: 
+2023-09-16 19:52:29  No IP Address 	 Uptime: 00:00:01:31
+--
+2023-09-17 08:06:27 Up 	 Uptime: 00:12:15:28
+2023-09-17 08:06:38 No Reply: Router Down! 	 Uptime: 
+2023-09-17 08:06:49 No Reply: Router Down! 	 Uptime: 
+2023-09-17 08:07:00 No Reply: Router Down! 	 Uptime: 
+2023-09-17 08:07:11 No Reply: Router Down! 	 Uptime: 
+2023-09-17 08:07:23 No Reply: Router Down! 	 Uptime: 
+2023-09-17 08:07:34 No Reply: Router Down! 	 Uptime: 
+2023-09-17 08:07:45 No Reply: Router Down! 	 Uptime: 
+2023-09-17 08:08:02  Down 	 Uptime: 00:00:01:20
+2023-09-17 08:08:13  No IP Address 	 Uptime: 00:00:01:32
+2023-09-17 08:08:25  No IP Address 	 Uptime: 00:00:01:44
+--
+2023-09-17 15:42:32 Up 	 Uptime: 00:07:35:51
+2023-09-17 15:42:55 No Reply: Router Down! 	 Uptime: 
+2023-09-17 15:43:06 No Reply: Router Down! 	 Uptime: 
+2023-09-17 15:43:17 No Reply: Router Down! 	 Uptime: 
+2023-09-17 15:43:28 No Reply: Router Down! 	 Uptime: 
+2023-09-17 15:43:39 No Reply: Router Down! 	 Uptime: 
+2023-09-17 15:43:50 No Reply: Router Down! 	 Uptime: 
+2023-09-17 15:44:02  Down 	 Uptime: 00:00:01:10
+2023-09-17 15:44:20  Down 	 Uptime: 00:00:01:28
+2023-09-17 15:44:31  No IP Address 	 Uptime: 00:00:01:39
+2023-09-17 15:44:43  No IP Address 	 Uptime: 00:00:01:51
+--
+2023-09-18 13:45:31 Up 	 Uptime: 00:22:02:39
+2023-09-18 13:45:53 No Reply: Router Down! 	 Uptime: 
+2023-09-18 13:46:05 No Reply: Router Down! 	 Uptime: 
+2023-09-18 13:46:16 No Reply: Router Down! 	 Uptime: 
+2023-09-18 13:46:27 No Reply: Router Down! 	 Uptime: 
+2023-09-18 13:46:38 No Reply: Router Down! 	 Uptime: 
+2023-09-18 13:46:49 No Reply: Router Down! 	 Uptime: 
+2023-09-18 13:47:01  Down 	 Uptime: 00:00:01:12
+2023-09-18 13:47:24  No IP Address 	 Uptime: 00:00:01:35
+2023-09-18 13:47:36  No IP Address 	 Uptime: 00:00:01:47
+--
+2023-09-19 18:15:47 Up 	 Uptime: 01:04:29:58
+2023-09-19 18:16:09 No Reply: Router Down! 	 Uptime: 
+2023-09-19 18:16:21 No Reply: Router Down! 	 Uptime: 
+2023-09-19 18:16:32 No Reply: Router Down! 	 Uptime: 
+2023-09-19 18:16:43 No Reply: Router Down! 	 Uptime: 
+2023-09-19 18:16:54 No Reply: Router Down! 	 Uptime: 
+2023-09-19 18:17:05 No Reply: Router Down! 	 Uptime: 
+2023-09-19 18:17:18  Down 	 Uptime: 00:00:01:15
+2023-09-19 18:17:35  Down 	 Uptime: 00:00:01:32
+2023-09-19 18:17:47  No IP Address 	 Uptime: 00:00:01:44
+2023-09-19 18:17:59  No IP Address 	 Uptime: 00:00:01:55
+--
+2023-09-20 00:31:49 Up 	 Uptime: 
+2023-09-20 00:32:00 No Reply: Router Down! 	 Uptime: 
+2023-09-20 00:32:11 No Reply: Router Down! 	 Uptime: 
+2023-09-20 00:32:23 No Reply: Router Down! 	 Uptime: 
+2023-09-20 00:32:34 No Reply: Router Down! 	 Uptime: 
+2023-09-20 00:32:45 No Reply: Router Down! 	 Uptime: 
+2023-09-20 00:32:56 No Reply: Router Down! 	 Uptime: 
+2023-09-20 00:33:07 No Reply: Router Down! 	 Uptime: 
+2023-09-20 00:33:18 No Reply: Router Down! 	 Uptime: 
+2023-09-20 00:33:41  No IP Address 	 Uptime: 00:00:01:34
+2023-09-20 00:33:53  No IP Address 	 Uptime: 00:00:01:46
+--
+2023-09-20 13:11:40 Up 	 Uptime: 00:12:39:32
+2023-09-20 13:12:02 No Reply: Router Down! 	 Uptime: 
+--
+2023-09-20 17:50:41 Up 	 Uptime: 00:17:18:33
+2023-09-20 17:51:03 No Reply: Router Down! 	 Uptime: 
+2023-09-20 17:51:15 No Reply: Router Down! 	 Uptime: 
+2023-09-20 17:51:26 No Reply: Router Down! 	 Uptime: 
+2023-09-20 17:51:37 No Reply: Router Down! 	 Uptime: 
+2023-09-20 17:51:48 No Reply: Router Down! 	 Uptime: 
+2023-09-20 17:51:59 No Reply: Router Down! 	 Uptime: 
+2023-09-20 17:52:09 No Reply: Router Down! 	 Uptime: 00:00:01:08
+2023-09-20 17:52:43  No IP Address 	 Uptime: 00:00:01:42
+--
+2023-09-21 05:06:16 Up 	 Uptime: 00:11:15:15
+2023-09-21 05:06:38 No Reply: Router Down! 	 Uptime: 
+2023-09-21 05:06:49 No Reply: Router Down! 	 Uptime: 
+2023-09-21 05:07:00 No Reply: Router Down! 	 Uptime: 
+2023-09-21 05:07:12 No Reply: Router Down! 	 Uptime: 
+2023-09-21 05:07:23 No Reply: Router Down! 	 Uptime: 
+2023-09-21 05:07:34 No Reply: Router Down! 	 Uptime: 
+2023-09-21 05:07:45 No Reply: Router Down! 	 Uptime: 
+2023-09-21 05:07:58  Down 	 Uptime: 00:00:01:19
+2023-09-21 05:08:13  No IP Address 	 Uptime: 00:00:01:34
+2023-09-21 05:08:25  No IP Address 	 Uptime: 00:00:01:46
+2023-09-21 05:08:37  No IP Address 	 Uptime: 00:00:01:58
+--
+2023-09-21 06:27:42 Up 	 Uptime: 00:01:21:03
+2023-09-21 06:28:04 No Reply: Router Down! 	 Uptime: 
+2023-09-21 06:28:16 No Reply: Router Down! 	 Uptime: 
+2023-09-21 06:28:27 No Reply: Router Down! 	 Uptime: 
+2023-09-21 06:28:38 No Reply: Router Down! 	 Uptime: 
+2023-09-21 06:28:49 No Reply: Router Down! 	 Uptime: 
+2023-09-21 06:29:00 No Reply: Router Down! 	 Uptime: 
+2023-09-21 06:29:17  Down 	 Uptime: 00:00:01:19
+2023-09-21 06:29:29  No IP Address 	 Uptime: 00:00:01:31
+--
+2023-09-21 08:17:10 Up 	 Uptime: 00:01:49:11
+2023-09-21 08:17:31 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:17:42 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:17:53 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:18:04 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:18:16 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:18:27 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:18:35 No Reply: Router Down! 	 Uptime: 00:00:01:04
+2023-09-21 08:18:59  No IP Address 	 Uptime: 00:00:01:27
+--
+2023-09-21 08:38:50 Up 	 Uptime: 00:00:21:18
+2023-09-21 08:39:12 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:39:23 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:39:34 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:39:45 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:39:56 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:40:08 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:40:19 No Reply: Router Down! 	 Uptime: 
+2023-09-21 08:40:36  Down 	 Uptime: 00:00:01:24
+--
+2023-09-21 15:14:50 Up 	 Uptime: 00:06:35:38
+2023-09-21 15:15:12 No Reply: Router Down! 	 Uptime: 
+2023-09-21 15:15:23 No Reply: Router Down! 	 Uptime: 
+2023-09-21 15:15:34 No Reply: Router Down! 	 Uptime: 
+2023-09-21 15:15:45 No Reply: Router Down! 	 Uptime: 
+2023-09-21 15:15:57 No Reply: Router Down! 	 Uptime: 
+2023-09-21 15:16:08 No Reply: Router Down! 	 Uptime: 
+2023-09-21 15:16:19 No Reply: Router Down! 	 Uptime: 
+2023-09-21 15:16:36  Down 	 Uptime: 00:00:01:20
+2023-09-21 15:16:51  No IP Address 	 Uptime: 00:00:01:37
+--
+2023-09-22 04:11:08 Up 	 Uptime: 00:12:55:53
+2023-09-22 04:11:30 No Reply: Router Down! 	 Uptime: 
+2023-09-22 04:11:41 No Reply: Router Down! 	 Uptime: 
+2023-09-22 04:11:52 No Reply: Router Down! 	 Uptime: 
+2023-09-22 04:12:03 No Reply: Router Down! 	 Uptime: 
+2023-09-22 04:12:15 No Reply: Router Down! 	 Uptime: 
+2023-09-22 04:12:26 No Reply: Router Down! 	 Uptime: 
+2023-09-22 04:12:38  Down 	 Uptime: 00:00:01:09
+2023-09-22 04:13:01  No IP Address 	 Uptime: 00:00:01:32
+2023-09-22 04:13:13  No IP Address 	 Uptime: 00:00:01:44
+--
+2023-09-22 10:32:49 Up 	 Uptime: 00:06:21:20
+2023-09-22 10:33:10 No Reply: Router Down! 	 Uptime: 
+2023-09-22 10:33:21 No Reply: Router Down! 	 Uptime: 
+2023-09-22 10:33:32 No Reply: Router Down! 	 Uptime: 
+2023-09-22 10:33:43 No Reply: Router Down! 	 Uptime: 
+2023-09-22 10:33:55 No Reply: Router Down! 	 Uptime: 
+2023-09-22 10:34:06 No Reply: Router Down! 	 Uptime: 
+2023-09-22 10:34:18  Down 	 Uptime: 00:00:01:12
+--
+2023-09-22 16:30:40 Up 	 Uptime: 00:05:57:34
+2023-09-22 16:30:51 No Reply: Router Down! 	 Uptime: 
+2023-09-22 16:31:02 No Reply: Router Down! 	 Uptime: 
+2023-09-22 16:31:14 No Reply: Router Down! 	 Uptime: 
+2023-09-22 16:31:25 No Reply: Router Down! 	 Uptime: 
+2023-09-22 16:31:36 No Reply: Router Down! 	 Uptime: 
+2023-09-22 16:31:47 No Reply: Router Down! 	 Uptime: 
+2023-09-22 16:31:58 No Reply: Router Down! 	 Uptime: 
+2023-09-22 16:32:10  Down 	 Uptime: 00:00:01:15
+2023-09-22 16:32:33  No IP Address 	 Uptime: 00:00:01:38
+2023-09-22 16:32:45  No IP Address 	 Uptime: 00:00:01:50
+--
+2023-09-23 02:14:16 Up 	 Uptime: 00:09:43:21
+2023-09-23 02:14:36 No Reply: Router Down! 	 Uptime: 
+2023-09-23 02:14:47 No Reply: Router Down! 	 Uptime: 
+2023-09-23 02:14:58 No Reply: Router Down! 	 Uptime: 
+2023-09-23 02:15:09 No Reply: Router Down! 	 Uptime: 
+2023-09-23 02:15:20 No Reply: Router Down! 	 Uptime: 
+2023-09-23 02:15:32 No Reply: Router Down! 	 Uptime: 
+2023-09-23 02:15:43 No Reply: Router Down! 	 Uptime: 
+2023-09-23 02:15:55  Down 	 Uptime: 00:00:01:20
+2023-09-23 02:16:18  No IP Address 	 Uptime: 00:00:01:43
+--
+2023-09-23 09:24:38 Up 	 Uptime: 00:07:10:03
+2023-09-23 09:25:00 No Reply: Router Down! 	 Uptime: 
+2023-09-23 09:25:11 No Reply: Router Down! 	 Uptime: 
+2023-09-23 09:25:22 No Reply: Router Down! 	 Uptime: 
+2023-09-23 09:25:33 No Reply: Router Down! 	 Uptime: 
+2023-09-23 09:25:44 No Reply: Router Down! 	 Uptime: 
+2023-09-23 09:25:56 No Reply: Router Down! 	 Uptime: 
+2023-09-23 09:26:04 No Reply: Router Down! 	 Uptime: 00:00:01:10
+--
+2023-09-23 10:42:17 Up 	 Uptime: 00:01:17:24
+2023-09-23 10:42:39 No Reply: Router Down! 	 Uptime: 
+2023-09-23 10:42:51 No Reply: Router Down! 	 Uptime: 
+2023-09-23 10:43:02 No Reply: Router Down! 	 Uptime: 
+2023-09-23 10:43:13 No Reply: Router Down! 	 Uptime: 
+2023-09-23 10:43:24 No Reply: Router Down! 	 Uptime: 
+2023-09-23 10:43:35 No Reply: Router Down! 	 Uptime: 
+2023-09-23 10:43:46 No Reply: Router Down! 	 Uptime: 
+--
+2023-09-23 12:33:13 Up 	 Uptime: 00:01:50:32
+2023-09-23 12:33:35 No Reply: Router Down! 	 Uptime: 
+2023-09-23 12:33:46 No Reply: Router Down! 	 Uptime: 
+2023-09-23 12:33:58 No Reply: Router Down! 	 Uptime: 
+2023-09-23 12:34:09 No Reply: Router Down! 	 Uptime: 
+2023-09-23 12:34:20 No Reply: Router Down! 	 Uptime: 
+2023-09-23 12:34:31 No Reply: Router Down! 	 Uptime: 
+2023-09-23 12:34:41 No Reply: Router Down! 	 Uptime: 00:00:01:05
+2023-09-23 12:34:52  Down 	 Uptime: 00:00:01:16
+2023-09-23 12:35:10  No IP Address 	 Uptime: 00:00:01:34
+--
+2023-09-24 05:01:21 Up 	 Uptime: 00:16:27:45
+2023-09-24 05:01:44 No Reply: Router Down! 	 Uptime: 
+2023-09-24 05:01:55 No Reply: Router Down! 	 Uptime: 
+2023-09-24 05:02:06 No Reply: Router Down! 	 Uptime: 
+2023-09-24 05:02:17 No Reply: Router Down! 	 Uptime: 
+2023-09-24 05:02:28 No Reply: Router Down! 	 Uptime: 
+2023-09-24 05:02:39 No Reply: Router Down! 	 Uptime: 
+2023-09-24 05:02:52  Down 	 Uptime: 00:00:01:09
+2023-09-24 05:03:05  Down 	 Uptime: 00:00:01:22
+2023-09-24 05:03:28  No IP Address 	 Uptime: 00:00:01:46
+2023-09-24 05:03:40  No IP Address 	 Uptime: 00:00:01:57
+--
+2023-09-24 07:06:05 Up 	 Uptime: 00:02:04:23
+2023-09-24 07:06:27 No Reply: Router Down! 	 Uptime: 
+2023-09-24 07:06:39 No Reply: Router Down! 	 Uptime: 
+2023-09-24 07:06:50 No Reply: Router Down! 	 Uptime: 
+2023-09-24 07:07:01 No Reply: Router Down! 	 Uptime: 
+2023-09-24 07:07:12 No Reply: Router Down! 	 Uptime: 
+2023-09-24 07:07:23 No Reply: Router Down! 	 Uptime: 
+2023-09-24 07:07:32 No Reply: Router Down! 	 Uptime: 00:00:01:03
+2023-09-24 07:07:49  Down 	 Uptime: 00:00:01:20
+2023-09-24 07:08:01  No IP Address 	 Uptime: 00:00:01:32
+--
+2023-09-24 15:44:06 Up 	 Uptime: 00:08:37:37
+2023-09-24 15:44:29 No Reply: Router Down! 	 Uptime: 
+2023-09-24 15:44:40 No Reply: Router Down! 	 Uptime: 
+2023-09-24 15:44:51 No Reply: Router Down! 	 Uptime: 
+2023-09-24 15:45:02 No Reply: Router Down! 	 Uptime: 
+2023-09-24 15:45:13 No Reply: Router Down! 	 Uptime: 
+2023-09-24 15:45:24 No Reply: Router Down! 	 Uptime: 
+2023-09-24 15:45:37  Down 	 Uptime: 00:00:01:15
+2023-09-24 15:45:49  Down 	 Uptime: 00:00:01:28
+2023-09-24 15:46:12  No IP Address 	 Uptime: 00:00:01:50
+2023-09-24 15:46:24  No IP Address 	 Uptime: 00:00:02:02
+--
+2023-09-25 00:25:39 Up 	 Uptime: 00:08:41:17
+2023-09-25 00:26:00 No Reply: Router Down! 	 Uptime: 
+2023-09-25 00:26:11 No Reply: Router Down! 	 Uptime: 
+2023-09-25 00:26:22 No Reply: Router Down! 	 Uptime: 
+2023-09-25 00:26:33 No Reply: Router Down! 	 Uptime: 
+2023-09-25 00:26:44 No Reply: Router Down! 	 Uptime: 
+2023-09-25 00:26:55 No Reply: Router Down! 	 Uptime: 
+2023-09-25 00:27:04 No Reply: Router Down! 	 Uptime: 00:00:01:02
+2023-09-25 00:27:27  No IP Address 	 Uptime: 00:00:01:25
+2023-09-25 00:27:40  No IP Address 	 Uptime: 00:00:01:38
+--
+2023-09-25 16:17:09 Up 	 Uptime: 00:15:51:07
+2023-09-25 16:17:31 No Reply: Router Down! 	 Uptime: 
+2023-09-25 16:17:42 No Reply: Router Down! 	 Uptime: 
+2023-09-25 16:17:53 No Reply: Router Down! 	 Uptime: 
+2023-09-25 16:18:04 No Reply: Router Down! 	 Uptime: 
+2023-09-25 16:18:16 No Reply: Router Down! 	 Uptime: 
+2023-09-25 16:18:27 No Reply: Router Down! 	 Uptime: 
+2023-09-25 16:18:38 No Reply: Router Down! 	 Uptime: 
+2023-09-25 16:18:50  Down 	 Uptime: 00:00:01:18
+--
+2023-09-26 01:11:56 Up 	 Uptime: 00:08:54:23
+2023-09-26 01:12:18 No Reply: Router Down! 	 Uptime: 
+2023-09-26 01:12:29 No Reply: Router Down! 	 Uptime: 
+2023-09-26 01:12:40 No Reply: Router Down! 	 Uptime: 
+2023-09-26 01:12:51 No Reply: Router Down! 	 Uptime: 
+2023-09-26 01:13:02 No Reply: Router Down! 	 Uptime: 
+2023-09-26 01:13:14 No Reply: Router Down! 	 Uptime: 
+2023-09-26 01:13:22 No Reply: Router Down! 	 Uptime: 00:00:01:05
+2023-09-26 01:13:39  Down 	 Uptime: 00:00:01:22
+2023-09-26 01:13:51  No IP Address 	 Uptime: 00:00:01:34
+2023-09-26 01:14:03  No IP Address 	 Uptime: 00:00:01:46
+--
+2023-09-26 18:09:41 Up 	 Uptime: 00:16:57:24
+2023-09-26 18:10:03 No Reply: Router Down! 	 Uptime: 
+2023-09-26 18:10:14 No Reply: Router Down! 	 Uptime: 
+2023-09-26 18:10:25 No Reply: Router Down! 	 Uptime: 
+2023-09-26 18:10:36 No Reply: Router Down! 	 Uptime: 
+2023-09-26 18:10:48 No Reply: Router Down! 	 Uptime: 
+2023-09-26 18:10:59 No Reply: Router Down! 	 Uptime: 
+2023-09-26 18:11:10 No Reply: Router Down! 	 Uptime: 
+2023-09-26 18:11:25  Down 	 Uptime: 00:00:01:23
+2023-09-26 18:11:38  No IP Address 	 Uptime: 00:00:01:35
+2023-09-26 18:11:50  No IP Address 	 Uptime: 00:00:01:47
 </pre>
 </div>
+
+### Let's find the average uptime of AT&T Fiber at my house over the last two months.
+
+* 21 hours 56 minutes.  Wow.
+* This isn't even considering when the gateway is unresponsive, just when the external connection goes down.
+
+
+<div style="overflow-y: auto; max-height: 512px;"><pre>
+🈲 ~ 09:07$ grep -v "Down!" att.log | egrep -B1 "Down|Address" | egrep "Up       Uptime"
+2023-08-08 10:38:14 Up 	 Uptime: 00:02:00:44
+2023-08-09 02:51:48 Up 	 Uptime:
+2023-08-14 17:14:25 Up 	 Uptime: 05:14:21:55
+2023-08-15 03:00:41 Up 	 Uptime: 00:09:46:00
+2023-08-15 10:00:44 Up 	 Uptime: 00:06:59:44
+2023-08-20 19:36:49 Up 	 Uptime: 05:09:35:49
+2023-08-21 17:38:46 Up 	 Uptime: 00:22:01:36
+2023-08-22 10:36:36 Up 	 Uptime: 00:16:57:26
+2023-08-23 06:46:06 Up 	 Uptime: 00:20:09:13
+2023-08-23 23:29:44 Up 	 Uptime: 00:16:43:16
+2023-08-24 09:53:14 Up 	 Uptime: 00:10:23:12
+2023-08-25 21:26:33 Up 	 Uptime: 01:11:32:56
+2023-08-26 18:14:25 Up 	 Uptime: 00:20:47:33
+2023-08-29 00:08:09 Up 	 Uptime: 00:08:49:01
+2023-08-29 06:32:14 Up 	 Uptime: 00:06:23:41
+2023-08-29 13:52:35 Up 	 Uptime: 00:07:19:59
+2023-08-30 03:37:46 Up 	 Uptime: 00:13:44:47
+2023-08-30 22:36:39 Up 	 Uptime: 00:18:58:35
+2023-08-31 08:58:17 Up 	 Uptime: 00:10:21:17
+2023-09-09 12:10:35 Up 	 Uptime: 09:03:11:58
+2023-09-12 10:57:56 Up 	 Uptime: 00:10:23:25
+2023-09-12 17:38:32 Up 	 Uptime: 00:06:40:14
+2023-09-14 20:39:18 Up 	 Uptime: 01:16:18:18
+2023-09-15 15:22:02 Up 	 Uptime: 00:18:42:20
+2023-09-16 19:50:37 Up 	 Uptime: 00:06:40:38
+2023-09-17 08:06:27 Up 	 Uptime: 00:12:15:28
+2023-09-17 15:42:32 Up 	 Uptime: 00:07:35:51
+2023-09-18 13:45:31 Up 	 Uptime: 00:22:02:39
+2023-09-19 18:15:47 Up 	 Uptime: 01:04:29:58
+2023-09-20 00:31:49 Up 	 Uptime:
+2023-09-20 17:50:41 Up 	 Uptime: 00:17:18:33
+2023-09-21 05:06:16 Up 	 Uptime: 00:11:15:15
+2023-09-21 06:27:42 Up 	 Uptime: 00:01:21:03
+2023-09-21 08:17:10 Up 	 Uptime: 00:01:49:11
+2023-09-21 08:38:50 Up 	 Uptime: 00:00:21:18
+2023-09-21 15:14:50 Up 	 Uptime: 00:06:35:38
+2023-09-22 04:11:08 Up 	 Uptime: 00:12:55:53
+2023-09-22 10:32:49 Up 	 Uptime: 00:06:21:20
+2023-09-22 16:30:40 Up 	 Uptime: 00:05:57:34
+2023-09-23 02:14:16 Up 	 Uptime: 00:09:43:21
+2023-09-23 12:33:13 Up 	 Uptime: 00:01:50:32
+2023-09-24 05:01:21 Up 	 Uptime: 00:16:27:45
+2023-09-24 07:06:05 Up 	 Uptime: 00:02:04:23
+2023-09-24 15:44:06 Up 	 Uptime: 00:08:37:37
+2023-09-25 00:25:39 Up 	 Uptime: 00:08:41:17
+2023-09-25 16:17:09 Up 	 Uptime: 00:15:51:07
+2023-09-26 01:11:56 Up 	 Uptime: 00:08:54:23
+2023-09-26 18:09:41 Up 	 Uptime: 00:16:57:24
+2023-09-27 08:59:33 Up 	 Uptime: 00:14:49:30
+
+</pre></div>
 
 <br>
 
